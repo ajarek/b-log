@@ -4,13 +4,17 @@
 
 <div class="container mt-5">
   <h3>All Blogs🙂</h3>
+
+  <%blogs.reverse()%>
   <%blogs.forEach(blog=>{%>
     <div class="card">
       <div class="card-body">
         <p class="text-muted">published at: <%= blog.postedAt %></p>
         <h5 class="card-title"><%= blog.title %></h5>
-        <p class="card-text"><%= blog.content.slice(0, 99) %>....<a href="#">Read Morre</a></p>
-        <a href="#" class="btn btn-primary">Read More</a>
+        <p class="card-text"><%= blog.content.slice(0, 99) %>....<a href="/blog/<%=blog._id%>">Read Morre</a></p>
+        <a href="/blog/<%=blog._id%>" class="btn btn-primary">Read More</a>
+        <a href="/delete/<%=blog._id%>" class="btn btn-danger">Delete</a>
+        <a href="/edit/<%=blog._id%>" class="btn btn-warning">Edit</a>
       </div>
     </div>
   <%})%>
