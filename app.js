@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose =require('mongoose')
 const app =express()
 const port=process.env.PORT||3000
-const url = 'mongodb://127.0.0.1:27017/mongo-test'
+const url = `mongodb+srv://ajarek2101:ajarek2101@cluster0.sjicg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 //cd mongodb>bin\mongod --dbpath data
 //connect to the mongodb database
 mongoose.connect(url,()=>{console.log('Connection to mongodb database was successful!');})
